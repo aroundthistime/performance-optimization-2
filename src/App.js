@@ -21,21 +21,24 @@ function App() {
     }, [])
 
     return (
-        <div className="App">
-            <Header />
-            <InfoTable />
-            <ButtonModal
-                onClick={() => { setShowModal(true) }}
-                onMouseEnter={onModalToggleButtonMouseEnter}
-            >
-                올림픽 사진 보기
-            </ButtonModal>
-            <SurveyChart />
-            <Footer />
-            <Suspense fallback={null}>
-                {showModal ? <LazyImageModal closeModal={() => { setShowModal(false) }} /> : null}
-            </Suspense>
-        </div>
+        <>
+            <link rel="preconnect" href="https://stillmed.olympic.org" />
+            <div className="App">
+                <Header />
+                <InfoTable />
+                <ButtonModal
+                    onClick={() => { setShowModal(true) }}
+                    onMouseEnter={onModalToggleButtonMouseEnter}
+                >
+                    올림픽 사진 보기
+                </ButtonModal>
+                <SurveyChart />
+                <Footer />
+                <Suspense fallback={null}>
+                    {showModal ? <LazyImageModal closeModal={() => { setShowModal(false) }} /> : null}
+                </Suspense>
+            </div>
+        </>
     )
 }
 
