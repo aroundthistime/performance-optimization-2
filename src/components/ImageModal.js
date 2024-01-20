@@ -46,7 +46,7 @@ const ImageModal = (props) => {
                 <BtnClose src={btnClose} onClick={props.closeModal} />
                 <ModalHeader>올림픽 사진</ModalHeader>
                 <Modalbody>
-                    <ImageGallery items={images} />
+                    <ImageGallery items={images} lazyLoad={true}/>
                 </Modalbody>
             </ImageModalContainer>
         </ImageModalWrapper>
